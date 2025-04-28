@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Guitar Pedalboard</title>
+  <style>
+    body { font-family: sans-serif; background: #222; color: white; padding: 20px; }
+    .pedal { border: 1px solid #555; border-radius: 8px; padding: 15px; margin: 10px 0; background: #333; }
+    .pedal h2 { margin-top: 0; }
+    .pedal label { display: block; margin: 10px 0 5px; }
+    .pedal input[type=range] { width: 100%; }
+    .toggle { margin-top: 10px; }
+    button { background: #444; color: white; border: none; padding: 8px 12px; cursor: pointer; }
+    button:hover { background: #666; }
+  </style>
+</head>
+<body>
+  <h1>Guitar Pedalboard</h1>
+  <p>Plug in your guitar via audio interface or mic. Allow browser access to audio input.</p>
+
+  <div class="pedal" id="boostPedal">
+    <h2>Boost</h2>
+    <label>Gain: <span id="boostValue">1.5</span></label>
+    <input type="range" min="0" max="5" step="0.1" value="1.5" id="boostGain">
+    <button class="toggle" id="boostToggle">Toggle Boost</button>
+  </div>
+
+  <div class="pedal" id="distortionPedal">
+    <h2>Distortion</h2>
+    <label>Amount: <span id="distortionValue">300</span></label>
+    <input type="range" min="0" max="1000" step="10" value="300" id="distortionAmount">
+    <button class="toggle" id="distortionToggle">Toggle Distortion</button>
+  </div>
+
+  <div class="pedal" id="delayPedal">
+    <h2>Delay</h2>
+  
+    <label>Time (s): <span id="delayValue">0.4</span></label>
+    <input type="range" min="0" max="2" step="0.01" value="0.4" id="delayTime">
+  
+    <label>Feedback: <span id="delayFeedbackValue">0.5</span></label>
+    <input type="range" min="0" max="0.95" step="0.01" value="0.5" id="delayFeedback">
+  
+    <label>Mix: <span id="delayMixValue">0.5</span></label>
+    <input type="range" min="0" max="1" step="0.01" value="0.5" id="delayMix">
+  
+    <button class="toggle" id="delayToggle">Toggle Delay</button>
+  </div>
+  
+
+  <div class="pedal" id="reverbPedal">
+    <h2>Reverb</h2>
+    <button class="toggle" id="reverbToggle">Toggle Reverb</button>
+  </div>
+
+  <script src="pedals.js"></script>
+</body>
+</html>
